@@ -7,7 +7,7 @@ import { getProducts } from './actions/product.action';
 import { createRoot } from 'react-dom/client';
 import rootReducer from "./reducers";
 
-const store = configureStore({
+export const store = configureStore({
     reducer: rootReducer,
     devTools: true,
 });

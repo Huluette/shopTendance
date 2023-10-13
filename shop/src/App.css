@@ -1,3 +1,21 @@
+/** AJOUT CSS **/
+
+header {
+  width: 100%;
+  height: auto;
+  background-image: url(img/header.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 7vw;
+  color: rgb(255, 218, 219);
+  text-shadow: 0 0 10px black;
+}
+
+/** BASE **/
+
 .App {
   text-align: center;
 }
