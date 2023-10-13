@@ -1,5 +1,5 @@
 import './App.css';
-import Shop from './components/shop';
+import Card from './components/card';
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
         <h1>ShopTendance</h1>
       </header>
       <section className="App-section">
-        <Shop/>
+        <Card/>
       </section>
     </div>
   );

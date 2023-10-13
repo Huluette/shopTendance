@@ -6,23 +6,19 @@
   const product = useSelector((state) => state.productReducer);
 
    return (
-    <div className="container-card">
-    <h2 className="sous-titre">Articles</h2>
-    <ul className="content-card">
+    <div className="card">
       {product.map((product, i) => (
-        <li key={i}>
+        <div key={i}>
           <shop product={product} /> 
           <p>{product.title}</p>
-          <p>{product.description}</p>
-          <p>{product.categories[0]}, {product.categories[1]}</p>
-          <p>{product.basePrice} €</p>
-          <p>{product.salePrice} €</p>
+          <p>Description: {product.description}</p>
+          <p>Catégorie: {product.categories[0]}, {product.categories[1]}</p>
+          <p>Prix: {product.basePrice} €</p>
+          <p>En solde: {product.salePrice} €</p>
           <img src={product.imageUrl}></img>
-
-        </li>
+        </div>
       ))}
-    </ul>
-  </div>
+    </div>
    );
 
  }
