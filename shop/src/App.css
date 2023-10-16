@@ -28,6 +28,7 @@ ul {
 
 p {
   text-align: left;
+  font-size: 1vw;
 }
 
 .App-section {
@@ -44,7 +45,7 @@ p {
 
 .image {
   width: 22vw;
-  height: 50vh;
+  height: 25vw;
   padding: 1vw;
   display: flex;
   justify-self: center;

@@ -18,6 +18,9 @@ const article = useSelector((state) => state.productReducer);
           <Shop key={i} product={product} />
         ))}
       </section>
+      <section className='App-articleSupp'>
+        
+      </section>
     </div>
   );
 }
