@@ -1,18 +1,23 @@
 import React, { useRef } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct, getProducts } from "../actions/product.action";
 
 const ArticleSupp = () => {
     const form = useRef(); 
     const articleSupp = useSelector (state => state.productReducer);
+    const dispatch = useDispatch();
 
     const handlForm = async (e) => {
         e.preventDefault();
 
         const articleSuppData = {
-            id: articleSupp.length + 1,
-            title: form.current[0].value,
-            description: form.current[1].value
+            title: articleSupp.title,
+            description: articleSupp.description
         }
+
+        await dispatch(addProduct(articleSuppData));
+        dispatch(getProducts());
+        form.current.reset();
     }
 
     return (

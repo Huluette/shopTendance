@@ -15,12 +15,12 @@ export const getProducts = () => {
     };
 };
 
-export const addProduct = () => {
+export const addProduct = (data) => {
     return async dispatch => {
-        const response = await axios.get('http://localhost:3000/products').then((res) => {
+        const response = await axios.post('http://localhost:3000/products', data).then((res) => {
             dispatch({
                 type: ADD_PRODUCT,
-                payload: res.data
+                payload: data
             });
         });
     };

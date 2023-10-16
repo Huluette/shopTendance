@@ -2,7 +2,7 @@ import './App.css';
 import Shop from './components/shop';
 import { isEmpty } from './components/card';
 import { useSelector } from 'react-redux';
-
+import ArticleSupp from './components/articleSupp';
 
 function App() {
 
@@ -19,7 +19,7 @@ const article = useSelector((state) => state.productReducer);
         ))}
       </section>
       <section className='App-articleSupp'>
-        
+        <ArticleSupp />
       </section>
     </div>
   );
