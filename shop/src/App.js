@@ -1,7 +1,12 @@
 import './App.css';
-import Card from './components/card';
+import Shop from './components/shop';
+import { isEmpty } from './components/card';
+import { useSelector } from 'react-redux';
+
 
 function App() {
+
+const article = useSelector((state) => state.productReducer);
 
   return (
     <div className="App">
@@ -9,7 +14,9 @@ function App() {
         <h1>ShopTendance</h1>
       </header>
       <section className="App-section">
-        <Card/>
+        {!isEmpty(article) && article.map((product, i) => (
+          <Shop key={i} product={product} />
+        ))}
       </section>
     </div>
   );
