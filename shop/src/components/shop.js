@@ -1,11 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
 function Shop(props) {
 
   const product = props.product;
-  
-  console.log(product);
 
     return (
       
