@@ -1,14 +1,15 @@
 import React from "react";
 
-function Shop(props) {
 
+function Shop(props) {
+  
   const product = props.product;
 
     return (
       
       <div className="produit">
         <div className="image">
-          <img src={product.imageUrl}/>
+          <img alt="URL" src={product.imageUrl}/>
         </div>
         <div className="description">
           <p>{product.title}</p>
