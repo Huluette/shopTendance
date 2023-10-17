@@ -13,6 +13,7 @@ const article = useSelector((state) => state.productReducer);
       <header className="App-header">
         <h1>ShopTendance</h1>
       </header>
+        <h2>Produits</h2>
       <section className="App-section">
         {!isEmpty(article) && article.map((product, i) => (
           <Shop key={i} product={product} />

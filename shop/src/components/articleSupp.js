@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { addProduct, getProducts } from "../actions/product.action";
-import { store } from "../index";
 
 const ArticleSupp = () => {
     const form = useRef();
@@ -28,9 +27,12 @@ const ArticleSupp = () => {
 
     return (
         <div className="form-container">
+            <h2>Ajoutez un article</h2>
             <form ref={form} onSubmit={e => handleForm(e)}>
-                <input type="text" placeholder="Titre de l'article..." name="title" />
-                <textarea type="text" placeholder="Description..." name="description"></textarea>
+                <label htmlFor="title">Titre : </label>
+                <input type="text" placeholder="Titre de l'article..." className="title" />
+                <label htmlFor="description">Description : </label>
+                <textarea rows="5" cols="50" type="text" placeholder="Description..." className="description" maxlength="100"></textarea>
                 <label htmlFor="categories">Catégories : </label>
                 <select className="categories">
                     <option value="">Choisissez une catégorie</option>
@@ -41,9 +43,11 @@ const ArticleSupp = () => {
                     <option value={ArticleSupp.categories}>Homme</option>
                     <option value={ArticleSupp.categories}>Femme</option>
                 </select>
-                <input type="number" placeholder="Prix de base..." />
+                <label htmlFor="price">Prix : </label>
+                <input className="price" type="number" placeholder="Prix de base..." />
                 <input type="number" placeholder="Prix de vente..." />
-                <input type="url" placeholder="URL de l'image..." />
+                <label htmlFor="imageUrl">Insérez une URL de l'image : </label>
+                <input type="url" placeholder="URL de l'image..." className="imageUrl"/>
                 <button type="submit">Soumettre</button>
             </form>
         </div>
