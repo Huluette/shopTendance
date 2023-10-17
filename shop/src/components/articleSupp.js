@@ -7,7 +7,7 @@ const ArticleSupp = () => {
     const dispatch = useDispatch();
 
     const handleForm = async (e) => {
-        e.preventDefault();
+        e.preventDefault();;
 
         const articleSuppData = {
             title: form.current[0].value,
@@ -30,11 +30,11 @@ const ArticleSupp = () => {
             <h2>Ajoutez un article</h2>
             <form ref={form} onSubmit={e => handleForm(e)}>
                 <label htmlFor="title">Titre : </label>
-                <input type="text" placeholder="Titre de l'article..." className="title" />
+                <input type="text" placeholder="Titre de l'article..." className="title" minlength="6" maxLength="40" required />
                 <label htmlFor="description">Description : </label>
-                <textarea rows="5" cols="50" type="text" placeholder="Description..." className="description" maxlength="100"></textarea>
+                <textarea rows="5" cols="50" type="text" placeholder="Description..." className="description" minLength="0" maxlength="100"></textarea>
                 <label htmlFor="categories">Catégories : </label>
-                <select className="categories">
+                <select className="categories" required>
                     <option value="">Choisissez une catégorie</option>
                     <option value={ArticleSupp.categories}>Accessoires</option>
                     <option value={ArticleSupp.categories}>Chaussures</option>
@@ -44,10 +44,10 @@ const ArticleSupp = () => {
                     <option value={ArticleSupp.categories}>Femme</option>
                 </select>
                 <label htmlFor="price">Prix : </label>
-                <input className="price" type="number" placeholder="Prix de base..." />
-                <input type="number" placeholder="Prix de vente..." />
+                <input className="price" type="number" placeholder="Prix de base..." min="0" required />
+                <input type="number" placeholder="Prix de vente..." min="0"required />
                 <label htmlFor="imageUrl">Insérez une URL de l'image : </label>
-                <input type="url" placeholder="URL de l'image..." className="imageUrl"/>
+                <input type="url" placeholder="URL de l'image..." className="imageUrl" pattern="https?://.+" required />
                 <button type="submit">Soumettre</button>
             </form>
         </div>
