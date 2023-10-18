@@ -17,6 +17,7 @@ function Shop(props) {
           <p>Catégorie: {product.categories}</p>
           <p>Prix: {product.basePrice} €</p>
           <p>En solde: {product.salePrice} €</p>
+        
         </div>
 
       </div>
