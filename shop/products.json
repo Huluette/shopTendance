@@ -161,6 +161,15 @@
       "salePrice": "5",
       "imageUrl": "https://plus.unsplash.com/premium_photo-1669632824466-09b2c595aa4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
       "id": 14
+    },
+    {
+      "title": "Article",
+      "description": "petit test http",
+      "categories": "Vêtements",
+      "basePrice": "15",
+      "salePrice": "10",
+      "imageUrl": "http://images.pexels.com/photos/5490803/pexels-photo-5490803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "id": 15
     }
   ]
 }
