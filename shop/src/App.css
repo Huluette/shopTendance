@@ -149,6 +149,44 @@ button {
   border-radius: 5px;
   margin-top: 2vw;
 }
+
+/** CONTAIN EDIT DELETE BUTTON **/
+
+.contain-edit-delete {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/** EDIT BUTTON **/
+
+.edit {
+  width: 1.5vw;
+  height: 1.5vw;
+  background-image: url(./img/editer.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+
+/** DELETE BUTTON **/
+
+.delete {
+  width: 1.5vw;
+  height: 1.5vw;
+  margin-left: 1vw;
+  background-image: url(./img/supprimer.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
 /** BASE **/
 
 .App {
