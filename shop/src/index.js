@@ -9,7 +9,7 @@ import rootReducer from "./reducers";
 
 export const store = configureStore({
     reducer: rootReducer,
-    devTools: false,
+    devTools: true,
 });
 
 store.dispatch(getProducts());
