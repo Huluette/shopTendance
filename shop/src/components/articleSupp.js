@@ -47,8 +47,7 @@ const ArticleSupp = () => {
                 <input id="price" type="number" placeholder="Prix de base..." min="0" required />
                 <input id="price2" type="number" placeholder="Prix de vente..." min="0"required />
                 <label htmlFor="imageUrl">Insérez une URL de l'image : </label>
-                <input type="url" placeholder="URL de l'image..." id="imageUrl" pattern="https?://.+" required />
-                <button type="submit">Soumettre</button>
+                <input type="url" placeholder="URL de l'image..." id="imageUrl" required />
             </form>
         </div>
     )
