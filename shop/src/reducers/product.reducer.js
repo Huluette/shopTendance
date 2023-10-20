@@ -9,9 +9,17 @@ export default function productReducer(state = initialState, action) {
         case ADD_PRODUCT:
             return state;
             case EDIT_PRODUCT:
-            return state;
+            return state.map((product) => {
+                if (product.id === action.payload.id) {
+                    return {
+                        ...product,
+                        content: action.payload.content
+                    }
+                }
+                else return product;
+            })
         case DELETE_PRODUCT:
-            return state.filter((product) => product.id != action.payload);
+            return state.filter((product) => product.id !== action.payload);
         default:
             return state;
     }

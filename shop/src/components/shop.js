@@ -65,7 +65,7 @@ function Shop(props) {
             <p>En solde: {product.salePrice} €</p>
           </div>
         </div>
-      )};
+      )}
     </div>
 )};
 
