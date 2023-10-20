@@ -12,30 +12,27 @@ function Shop(props) {
   const [editToggle, setEditToggle] = useState(false);
   const [editContent, setEditContent] = useState(product);
 
-  const handleEditToggle = (e) => {
+  const handleEditToggle = async (e) => {
     e.preventDefault();
 
     const postData = {
-      id: product.id,
-      title: product.title,
-      description: product.description,
-      categories: product.categories,
-      basePrice: product.basePrice,
-      salePrice: product.salePrice,
-      imageUrl: product.imageUrl,
+      title: product.current[0].value,
+      description: product.current[1].value,
+      categories: product.current[2].value,
+      basePrice: product.current[3].value,
+      salePrice: product.current[4].value,
+      id: product.current[6].value,
       content: editContent,
     };
 
-    dispatch(editProduct(postData));
+    await dispatch(editProduct(postData));
     setEditToggle(false);
 
   }
 
   return (
 
-    <>
-
-      <div className="">
+      <div>
 
 
         {!editToggle && (
@@ -60,15 +57,14 @@ function Shop(props) {
           </div>
         )}
 
-
         {editToggle && (
           <div className="produit">
-            <div className="image" onSubmit={handleEditToggle} autoFocus="true" defaultValue={product} onChange={(e) => setEditContent(e.target.value)}>
+            <div className="image" onSubmit={handleEditToggle} autoFocus={true} defaultValue={product} onChange={(e) => setEditContent(e.target.value)}>
               <img alt="URL" src={product.imageUrl} />
             </div>
             <div className="description editer">
-              <input defaultValue={product.title} placeholder="Titre..." required/>
-              <input defaultValue={product.description} placeholder="Description..." required/>
+              <input type="text" defaultValue={product.title} placeholder="Titre..." required/>
+              <textarea rows="2" cols="40" className="descriptarea" defaultValue={product.description} placeholder="Description..." required/>
               <select defaultValue={product.categories} placeholder="Choisissez une catégorie" required>
                 <option>Accessoires</option>
                 <option>Chaussures</option>
@@ -79,15 +75,12 @@ function Shop(props) {
               </select>
               <input type="number" defaultValue={product.basePrice} placeholder="Prix de vente" required/>
               <input type="number" defaultValue={product.salePrice} placeholder="Prix en solde" required/>
-              <input className="submitvalidate" type="submit" value="Valider modifiaction" placeholder="Valider modification"/>
+              <button type="submit" className="submitvalidate" value="Valider modifiaction">Valider</button>
             </div>
           </div>
-
-        )}
-
-
+          ) 
+        }
       </div>
-    </>
   )
 };
 
