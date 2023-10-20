@@ -3,13 +3,26 @@ import Shop from './components/shop';
 import { isEmpty } from './components/card';
 import { useSelector } from 'react-redux';
 import ArticleSupp from './components/articleSupp';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 function App() {
+  const article = useSelector((state) => state.productReducer);
+  
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <p>Accueil</p>,
+    },
+    {
+      path: "/articles",
+      element: <p>Articles</p>,
+    }
+  ])
 
-const article = useSelector((state) => state.productReducer);
 
   return (
     <div className="App">
+       <RouterProvider routeur={router}/>
       <header className="App-header">
         <h1>ShopTendance</h1>
       </header>
