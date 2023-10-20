@@ -3,30 +3,43 @@ import Shop from './components/shop';
 import { isEmpty } from './components/card';
 import { useSelector } from 'react-redux';
 import ArticleSupp from './components/articleSupp';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, NavLink, RouterProvider } from "react-router-dom";
+import Single from './pages/Single';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>
+      <h2>Accueil</h2>
+      <nav>
+        <NavLink to="/articles">Articles</NavLink>
+      </nav>
+    </div>
+  },
+  {
+    path: "/articles",
+    element: <div>
+    <h2>Articles</h2>
+    <nav>
+      <NavLink to="/">Accueil</NavLink>
+    </nav>
+  </div>
+  },
+  {
+    path: "/articles/:id",
+    element: <Single/>
+  }
+]);
 
 function App() {
   const article = useSelector((state) => state.productReducer);
-  
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <p>Accueil</p>,
-    },
-    {
-      path: "/articles",
-      element: <p>Articles</p>,
-    }
-  ])
-
 
   return (
     <div className="App">
-       <RouterProvider routeur={router}/>
       <header className="App-header">
         <h1>ShopTendance</h1>
       </header>
-        <h2>Produits</h2>
+      <RouterProvider router={router} className="routerprovider" />
       <section className="App-section">
         {!isEmpty(article) && article.map((product, i) => (
           <Shop key={i} product={product} />
