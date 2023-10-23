@@ -1,22 +1,39 @@
-import { createBrowserRouter, Outlet, RouterProvider, NavLink } from "react-router-dom";
-// import Single from './pages/Single';
+import { createBrowserRouter, Outlet, RouterProvider, NavLink, useRouteError } from "react-router-dom";
+import Single from "../pages/Single";
+import Accueil from "../pages/Accueil";
+import Articles from "../pages/Articles";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div><Outlet/></div>,
+    element: <div className="nav"><Outlet/></div>,
     errorElement: <PageError/>,
     children: [
 
     {
           path: "/",
-          element: [<h2>Accueil</h2>,
-          <NavLink to="/articles">Articles</NavLink>],
+          element: <Accueil/>,
         },
       {
         path: "/articles",
-        element: [<h2>Articles</h2>,
-        <NavLink to="/">Accueil</NavLink>],
+        element: [
+            <h2>Catégories</h2>,
+            <NavLink className="nav-link" to="/"><Outlet/></NavLink>],
+        children : [
+            {
+                path: "",
+                element: [
+                    <NavLink className="nav-link" to="/">Accueil</NavLink>,
+                <NavLink className="nav-link" to="/articles/:id">ma catégorie</NavLink>,
+                <Articles/>]
+            },
+          {
+            path: "/articles/:id",
+            element: [<Single/>,
+            <NavLink className="nav-link" to="/articles">Articles</NavLink>]
+          }
+        ]
       }
 
     ]
@@ -24,10 +41,13 @@ const router = createBrowserRouter([
 ]);
 
 function PageError() {
+
+    const error = useRouteError();
   return (
     <div className="error-container">
         <div className="error" alt="erreur"></div>
       <h3>Une erreur est survenue</h3>
+      <p> {error?.error?.toString() ?? error?.toString()} </p>
     </div>
   );
 }
