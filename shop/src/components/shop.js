@@ -32,55 +32,55 @@ function Shop(props) {
 
   return (
 
-      <div>
+    <div>
 
 
-        {!editToggle && (
+      {!editToggle && (
 
-          <div className="produit">
-            {!isEmpty(product) && (
-              <div className="contain-edit-delete">
-                <div className="edit" alt="edit" onClick={() => setEditToggle(!editToggle)} />
-                <div className="delete" alt="delete" onClick={() => dispatch(deleteProduct(product.id))} />
-              </div>
-            )}
-            <div className="image">
-              <img alt="URL" src={product.imageUrl} />
+        <div className="produit">
+          {!isEmpty(product) && (
+            <div className="contain-edit-delete">
+              <div className="edit" alt="edit" onClick={() => setEditToggle(!editToggle)} />
+              <div className="delete" alt="delete" onClick={() => dispatch(deleteProduct(product.id))} />
             </div>
-            <div className="description">
-              <p>{product.title}</p>
-              <p>Description: {product.description}</p>
-              <p>Catégorie: {product.categories}</p>
-              <p>Prix: {product.basePrice} €</p>
-              <p>En solde: {product.salePrice} €</p>
-            </div>
+          )}
+          <div className="image">
+            <img alt="URL" src={product.imageUrl} />
           </div>
-        )}
-
-        {editToggle && (
-          <div className="produit">
-            <div className="image" onSubmit={handleEditToggle} autoFocus={true} defaultValue={product} onChange={(e) => setEditContent(e.target.value)}>
-              <img alt="URL" src={product.imageUrl} />
-            </div>
-            <div className="description editer">
-              <input type="text" defaultValue={product.title} placeholder="Titre..." required/>
-              <textarea rows="2" cols="40" className="descriptarea" defaultValue={product.description} placeholder="Description..." required/>
-              <select defaultValue={product.categories} placeholder="Choisissez une catégorie" required>
-                <option>Accessoires</option>
-                <option>Chaussures</option>
-                <option>Vêtements</option>
-                <option>Sport</option>
-                <option>Homme</option>
-                <option>Femme</option>
-              </select>
-              <input type="number" defaultValue={product.basePrice} placeholder="Prix de vente" required/>
-              <input type="number" defaultValue={product.salePrice} placeholder="Prix en solde" required/>
-              <button type="submit" className="submitvalidate" value="Valider modifiaction">Valider</button>
-            </div>
+          <div className="description">
+            <p>{product.title}</p>
+            <p>Description: {product.description}</p>
+            <p>Catégorie: {product.categories}</p>
+            <p>Prix: {product.basePrice} €</p>
+            <p>En solde: {product.salePrice} €</p>
           </div>
-          ) 
-        }
-      </div>
+        </div>
+      )}
+
+      {editToggle && (
+        <div className="produit">
+          <div className="image" onSubmit={handleEditToggle} autoFocus={true} defaultValue={product} onChange={(e) => setEditContent(e.target.value)}>
+            <img alt="URL" src={product.imageUrl} />
+          </div>
+          <div className="description editer">
+            <input type="text" defaultValue={product.title} placeholder="Titre..." required />
+            <textarea rows="2" cols="40" className="descriptarea" defaultValue={product.description} placeholder="Description..." required />
+            <select defaultValue={product.categories} placeholder="Choisissez une catégorie" required>
+              <option>Accessoires</option>
+              <option>Chaussures</option>
+              <option>Vêtements</option>
+              <option>Sport</option>
+              <option>Homme</option>
+              <option>Femme</option>
+            </select>
+            <input type="number" defaultValue={product.basePrice} placeholder="Prix de vente" required />
+            <input type="number" defaultValue={product.salePrice} placeholder="Prix en solde" required />
+            <button type="submit" className="submitvalidate" value="Valider modifiaction">Valider</button>
+          </div>
+        </div>
+      )
+      }
+    </div>
   )
 };
 
