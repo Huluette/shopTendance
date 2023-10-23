@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 
-export default function Single() {
+function Single() {
 
     const {id} = useParams(() => {
         
@@ -13,3 +13,4 @@ export default function Single() {
     )
 }
 
+export default Single;
