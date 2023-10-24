@@ -253,6 +253,18 @@ button {
   text-decoration: none;
   margin: 1vw;
   font-size: 1vw;
+  transition: all .5s ease-in-out;
+}
+
+.nav-link:hover {
+  color: cyan;
+}
+
+.nav-categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 /** PAGE ACCUEIL **/

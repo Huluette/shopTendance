@@ -1,7 +1,7 @@
 import { createBrowserRouter, Outlet, RouterProvider, NavLink, useRouteError } from "react-router-dom";
 import Accueil from "../pages/Accueil";
 import Articles from "../pages/Articles";
-import Categories from "../pages/Categories";
+
 
 
 
@@ -20,14 +20,28 @@ const router = createBrowserRouter([
         path: "/articles",
         element: [
           <h2>Catégories</h2>,
-          <NavLink className="nav-link" to="/"><Outlet /></NavLink>],
+          <Outlet />],
+
         children: [
           {
-            path: "",
+            path: "/articles",
             element: [
-              <NavLink className="nav-link" to="/">Accueil</NavLink>,
-              <NavLink className="nav-link" to="/articles/:id"><Categories /></NavLink>,
-              <Articles />]
+
+              <ul className="nav-categories">
+              <li>
+                <NavLink className="nav-link" to="/">Accueil</NavLink></li>
+              <li>
+                <NavLink className="nav-link" to="/articles/:id">Femmes</NavLink></li>
+              <li>
+                <NavLink className="nav-link" to="/articles/:id">Hommes</NavLink></li>
+              <li>
+                <NavLink className="nav-link" to="/articles/:id">Ados</NavLink></li>
+              <li>
+                <NavLink className="nav-link" to="/articles/:id">Enfants</NavLink></li>
+              <li>
+                <NavLink className="nav-link" to="/articles/:id">Bébés</NavLink></li>
+                </ul>,
+                <Articles/>],
           },
           {
             path: "/articles/:id",
@@ -53,9 +67,16 @@ function PageError() {
 }
 
 function Root() {
+
+
   return (
-    <RouterProvider router={router}>
-    </RouterProvider>
+    <div>
+
+      <RouterProvider router={router}>
+      </RouterProvider>
+   
+
+    </div>
   )
 };
 
