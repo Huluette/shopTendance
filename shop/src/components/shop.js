@@ -66,12 +66,11 @@ function Shop(props) {
             <input type="text" defaultValue={product.title} placeholder="Titre..." required />
             <textarea rows="2" cols="40" className="descriptarea" defaultValue={product.description} placeholder="Description..." required />
             <select defaultValue={product.categories} placeholder="Choisissez une catégorie" required>
-              <option>Accessoires</option>
-              <option>Chaussures</option>
-              <option>Vêtements</option>
-              <option>Sport</option>
-              <option>Homme</option>
-              <option>Femme</option>
+              <option>Femmes</option>
+              <option>Hommes</option>
+              <option>Ados</option>
+              <option>Enfants</option>
+              <option>Bébés</option>
             </select>
             <input type="number" defaultValue={product.basePrice} placeholder="Prix de vente" required />
             <input type="number" defaultValue={product.salePrice} placeholder="Prix en solde" required />

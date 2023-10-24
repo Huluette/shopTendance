@@ -36,12 +36,11 @@ const ArticleSupp = () => {
                 <label htmlFor="categories">Catégories : </label>
                 <select id="categories" required>
                     <option value="">Choisissez une catégorie</option>
-                    <option value={ArticleSupp.categories}>Accessoires</option>
-                    <option value={ArticleSupp.categories}>Chaussures</option>
-                    <option value={ArticleSupp.categories}>Vêtements</option>
-                    <option value={ArticleSupp.categories}>Sport</option>
-                    <option value={ArticleSupp.categories}>Homme</option>
-                    <option value={ArticleSupp.categories}>Femme</option>
+                    <option value={ArticleSupp.categories}>Femmes</option>
+                    <option value={ArticleSupp.categories}>Hommes</option>
+                    <option value={ArticleSupp.categories}>Ados</option>
+                    <option value={ArticleSupp.categories}>Enfants</option>
+                    <option value={ArticleSupp.categories}>Bébés</option>
                 </select>
                 <label htmlFor="price">Prix : </label>
                 <input id="price" type="number" placeholder="Prix de base..." min="0" required />

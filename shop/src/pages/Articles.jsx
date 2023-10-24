@@ -11,8 +11,8 @@ function Articles() {
     return (
         <>
             <section className="App-section">
-                {!isEmpty(article) && article.map((product, i) => (
-                    <Shop key={i} product={product} />
+                {!isEmpty(article) && article.map((product) => (
+                    <Shop key={product.id} product={product} />
                 ))}
             </section>
             <section className='App-articleSupp'>
