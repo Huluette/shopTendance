@@ -20,10 +20,9 @@ function Single() {
             <section className="App-section">
                 {!isEmpty(product) && filteredProducts.map((product) => (
                     <Shop key={product.categories} product={product} />
-                ))}            </section>
-            <section className='App-articleSupp'>
-                <ArticleSupp />
+                ))}            
             </section>
+           
         </>
     )
 }
